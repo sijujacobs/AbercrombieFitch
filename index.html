@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'> 
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Abercrombie & Fitch</title>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+        <link rel="stylesheet" href="css/task.css">
+        <script src='app/task.js'></script>
+    </head>
+<body>
+    <div class='container'>
+        <div class="header">
+            <h1>Task Tracker</h1>
+            <p>v2.0</h5>
+        </div>
+
+        <div class="col-1">
+            <div class="taskCol">
+                <h3>Create a Task</h3>
+                <div class="divForm">
+                    <div class="formRow">
+                        <label class="formLabel">Task Name</label>
+                        <input  class="formInput taskName" type="text">
+                    </div>
+                    <div class="formRow">
+                        <label class="formLabel">Date</label>
+                        <input  class="formInput taskDate" type="text">
+                    </div>
+                    <div class="formRow">
+                        <label class="formLabel">Assigned To</label>
+                        <input  class="formInput taskAssigned" type="text">
+                    </div>
+                    <div class="formRow">
+                        <input class="formButton" type="submit">
+                        <label class="formErrorLabel"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="taskCol">
+                <h3>Existing Tasks</h3>
+                <div class="divTable"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
