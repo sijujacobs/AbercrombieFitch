@@ -10,7 +10,7 @@ var taskTracker = (function() {
         {"name": "Test Task #7", "date": "12/07/2012", "assigned": "John Doe" }
     ];
     var onPageLoad = function () { 
-        appendTasks(defaultTasks, pageAction);
+        updateTaskTable(defaultTasks, pageAction);
     }; 
 
     /**
@@ -27,7 +27,7 @@ var taskTracker = (function() {
         taskObject.assigned = $(".taskAssigned").val() || "";
         if(isValidForm(taskObject)){
             tasks.push(taskObject);
-            appendTasks(tasks, pageAction);
+            updateTaskTable(tasks, pageAction);
         }
     };
 
@@ -50,7 +50,7 @@ var taskTracker = (function() {
     }
 
     /**
-     * Here we clear the view after appending rows, this function called after appendTasks()
+     * Here we clear the view after appending rows, this function called after updateTaskTable()
      * Format date and display today's date as default
      */
     var clearForm = function() { 
@@ -70,8 +70,8 @@ var taskTracker = (function() {
      * @param {tasks} array The JSON obect, which is an array collection of objects .
      * @param {pageAction} string Append/Prepend rows based on this parameter.
      */
-    var appendTasks = function(tasks, pageAction){
-        //console.log('taskTracker :: appendTasks : pageAction = ' + pageAction); 
+    var updateTaskTable = function(tasks, pageAction){
+        //console.log('taskTracker :: updateTaskTable : pageAction = ' + pageAction); 
         var taskRows = tasks.map(function(taskObj) {
             var tRow = '<div class="divRow">'
                     + '<div class="divCell"><label class="nameCell">'+ taskObj.name + '</label><label class="dateCell"> ' + taskObj.date + '</label></div>'
@@ -90,7 +90,8 @@ var taskTracker = (function() {
 })();
 
 /**
- * When DOM is ready call appendTasks() and fill Table with local JSON data
+ * When DOM is ready, invodke onPageLoad() which will call updateTaskTable() and 
+ * fill Table with local JSON data
  * Register click event and call respective function when user click SUBMIT button 
  */
 $(document).ready(function(){
