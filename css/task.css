@@ -33,12 +33,12 @@ html, body
 }
 
 [class*="col-"] {
-    width: 100%;
+    width: 98%;
     height: 350px;
     float: left;
     padding: 10px;
     background-color: #fff;
-    margin-left: 8px;
+    margin: 0 0 10px 8px
 }
 
 .taskCol{
